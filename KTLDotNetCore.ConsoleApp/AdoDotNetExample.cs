@@ -219,6 +219,25 @@ WHERE BlogId = @BlogId;";
 
         }
 
+        public void Delete()
+        {
+            Console.Write("Blog id: ");
+            string id = Console.ReadLine();
 
+            SqlConnection connection = new SqlConnection(_connectionString);
+            connection.Open();
+
+            string query = @"DELETE FROM [dbo].[Tbl_Blog] Where BlogId =@BlogId";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@BlogId", id);
+
+            int result = cmd.ExecuteNonQuery();
+
+            Console.WriteLine(result == 1 ? "Record Deleted" : "Record Not Deleted");
+
+            connection.Close();
+
+        }
     }
 }
