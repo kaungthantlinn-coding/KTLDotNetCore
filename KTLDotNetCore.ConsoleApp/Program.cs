@@ -11,6 +11,6 @@ AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
 
 DapperExample dapperExample = new DapperExample();
 //dapperExample.Read();
-
-dapperExample.Create("Test Title", "Test Author", "Test Content");
+//dapperExample.Create("Test Title", "Test Author", "Test Content");
+dapperExample.Update(2, "Test Title", "Test Author", "Test Content");
 Console.ReadKey();
