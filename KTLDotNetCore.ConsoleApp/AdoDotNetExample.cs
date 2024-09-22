@@ -178,6 +178,47 @@ namespace KTLDotNetCore.ConsoleApp
 
         }
 
+        public void Update()
+        {
+            Console.Write("Enter your Blog Id: ");
+            string blogId = Console.ReadLine();
+
+            Console.Write("Enter your Blog Title: ");
+            string blogTitle = Console.ReadLine();
+
+            Console.Write("Enter your Blog Author: ");
+            string blogAuthor = Console.ReadLine();
+
+            Console.Write("Enter your Blog Content: ");
+            string blogContent = Console.ReadLine();
+
+
+            SqlConnection connection = new SqlConnection(_connectionString);
+
+
+            connection.Open();
+
+            string queryInsert = $@"UPDATE [dbo].[Tbl_Blog]
+  SET [BlogTitle] = @BlogTitle
+     ,[BlogAuthor] = @BlogAuthor
+     ,[BlogContent] =@BlogContent
+     ,[DeleteFlag] =0
+WHERE BlogId = @BlogId;";
+
+            SqlCommand cmd = new SqlCommand(queryInsert, connection);
+            cmd.Parameters.AddWithValue("@BlogId", blogId);
+            cmd.Parameters.AddWithValue("@BlogTitle", blogTitle);
+            cmd.Parameters.AddWithValue("@BlogAuthor", blogAuthor);
+            cmd.Parameters.AddWithValue("@BlogContent", blogContent);
+
+            int result = cmd.ExecuteNonQuery();
+
+            Console.WriteLine(result == 1 ? "Record Updated" : "Record Not Updated");
+
+            Console.ReadKey();
+
+        }
+
 
     }
 }
