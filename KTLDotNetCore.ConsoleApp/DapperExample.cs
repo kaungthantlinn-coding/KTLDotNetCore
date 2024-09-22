@@ -112,6 +112,31 @@ WHERE BlogId = @BlogId;";
                 Console.WriteLine(result == 1 ? "Record Deleted" : "Record Not Deleted");
             }
         }
+
+        public void Edit(int id)
+        {
+          using (IDbConnection db = new SqlConnection(_connectionString))
+            {
+                string query = @"SELECT * From Tbl_Blog Where DeleteFlag = 0 and BlogId = @BlogId;";
+
+                var lst = db.Query<BlogDataModel>(query, new BlogDataModel
+                {
+                    BlogId = id
+                }).FirstOrDefault();
+
+                if (lst is null)
+                {
+                  Console.WriteLine("Record Not Found");
+                    return;
+                }
+
+                Console.WriteLine(lst.BlogId);
+                Console.WriteLine(lst.BlogTitle);
+                Console.WriteLine(lst.BlogAuthor);
+                Console.WriteLine(lst.BlogContent);
+                }
+            }
+        }
     }
-}
+
 
