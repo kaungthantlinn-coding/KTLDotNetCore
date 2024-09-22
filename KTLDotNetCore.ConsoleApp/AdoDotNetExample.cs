@@ -140,6 +140,43 @@ namespace KTLDotNetCore.ConsoleApp
 
         }
 
+        //single record
+        public void Edit()
+        {
+            Console.Write("Blog id: ");
+            string id = Console.ReadLine();
+
+            SqlConnection connection = new SqlConnection(_connectionString);
+            connection.Open();
+
+            string query = @"SELECT [BlogId]
+     ,         [BlogTitle]
+     ,         [BlogAuthor]
+     ,         [BlogContent]
+     ,         [DeleteFlag]
+     FROM [dbo].[Tbl_Blog] Where BlogId =@BlogId";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@BlogId", id);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            connection.Close();
+
+            if (dt.Rows.Count == 0)
+            {
+                Console.WriteLine("Record Not Found");
+                return;
+            }
+
+            DataRow dr = dt.Rows[0];
+
+            Console.WriteLine("Blog Title: " + dr["BlogTitle"]);
+            Console.WriteLine("Blog Author: " + dr["BlogAuthor"]);
+            Console.WriteLine("Blog Content: " + dr["BlogContent"]);
+
+        }
 
 
     }
