@@ -94,7 +94,52 @@ namespace KTLDotNetCore.ConsoleApp
             Console.ReadKey();
         }
 
-       
+        public void Create()
+        {
+
+            Console.Write("Enter your Blog Title: ");
+            string blogTitle = Console.ReadLine();
+
+            Console.Write("Enter your Blog Author: ");
+            string blogAuthor = Console.ReadLine();
+
+            Console.Write("Enter your Blog Content: ");
+            string blogContent = Console.ReadLine();
+
+            // Connection string to connect to the database
+            //string connectionString = "Data Source=.;Initial Catalog=DotNetTesting;User ID=sa;Password=sasa@123;";
+
+            // Create a new SqlConnection with the connection string
+            SqlConnection connection = new SqlConnection(_connectionString);
+
+
+            connection.Open();
+
+            string queryInsert = $@"INSERT INTO [dbo].[Tbl_Blog]
+          ([BlogTitle]
+          ,[BlogAuthor]
+          ,[BlogContent]
+          ,[DeleteFlag])
+    VALUES
+          (@BlogTitle
+          ,@BlogAuthor
+          ,@BlogContent
+          ,0)";
+
+            SqlCommand cmd = new SqlCommand(queryInsert, connection);
+            cmd.Parameters.AddWithValue("@BlogTitle", blogTitle);
+            cmd.Parameters.AddWithValue("@BlogAuthor", blogAuthor);
+            cmd.Parameters.AddWithValue("@BlogContent", blogContent);
+
+            int result = cmd.ExecuteNonQuery();
+
+            Console.WriteLine(result == 1 ? "Record Inserted" : "Record Not Inserted");
+
+            Console.ReadKey();
+
+
+        }
+
 
 
     }
