@@ -49,5 +49,32 @@ namespace KTLDotNetCore.ConsoleApp
 
         }
 
+        public void Create(string title, string author, string content)
+        {
+            string queryInsert = $@"INSERT INTO [dbo].[Tbl_Blog]
+         ([BlogTitle]
+         ,[BlogAuthor]
+         ,[BlogContent]
+         ,[DeleteFlag])
+   VALUES
+         (@BlogTitle
+         ,@BlogAuthor
+         ,@BlogContent
+         ,0)";
+
+            using (IDbConnection db = new SqlConnection(_connectionString))
+            {
+                int result = db.Execute(queryInsert, new
+                {
+                    BlogTitle = title,
+                    BlogAuthor = author,
+                    BlogContent = content
+                });
+
+                Console.WriteLine(result == 1 ? "Record Inserted" : "Record Not Inserted");
+            }
+        }
+
+
     }
 }
