@@ -6,6 +6,10 @@ AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
 //adoDotNetExample.Create();
 //adoDotNetExample.Edit();
 //adoDotNetExample.Update();
-adoDotNetExample.Delete();
+//adoDotNetExample.Delete();
+
+
+DapperExample dapperExample = new DapperExample();
+dapperExample.Read();
 
 Console.ReadKey();
