@@ -20,5 +20,6 @@ DapperExample dapperExample = new DapperExample();
 
 EFCoreExample EFCoreExample = new EFCoreExample();
 //EFCoreExample.Read();
-EFCoreExample.Create("Test Title", "Test Author", "Test Content");
+//EFCoreExample.Create("Test Title", "Test Author", "Test Content");
+EFCoreExample.Update(2, "Test Title", "Test Author", "Test Content");
 Console.ReadKey();
