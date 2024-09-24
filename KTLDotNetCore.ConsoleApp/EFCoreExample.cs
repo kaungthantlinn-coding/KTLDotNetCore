@@ -87,6 +87,29 @@ namespace KTLDotNetCore.ConsoleApp
            
         }
 
+        public void Delete(int id) {
+
+        AppDbContext db = new AppDbContext();
+
+        var lst = db.Blogs.AsNoTracking().Where(x => x.BlogId == id).FirstOrDefault();
+
+            if (lst is null) {
+
+                Console.WriteLine("Record Not Found");
+                return;
+    
+        }
+
+      
+
+        db.Entry(lst).State = EntityState.Deleted;
+
+        var result = db.SaveChanges();
+
+        Console.WriteLine(result == 1 ? "Record Deleted" : "Record Not Deleted");
+
+        }
+
         
     }
 }
