@@ -14,5 +14,10 @@ DapperExample dapperExample = new DapperExample();
 //dapperExample.Create("Test Title", "Test Author", "Test Content");
 //dapperExample.Update(2, "Test Title", "Test Author", "Test Content");
 //dapperExample.Delete(3);
-dapperExample.Edit(3);
+//dapperExample.Edit(3);
+
+
+
+EFCoreExample EFCoreExample = new EFCoreExample();
+EFCoreExample.Read();
 Console.ReadKey();
