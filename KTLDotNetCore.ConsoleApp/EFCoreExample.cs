@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KTLDotNetCore.ConsoleApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,21 @@ namespace KTLDotNetCore.ConsoleApp
                 Console.WriteLine(item.BlogAuthor);
                 Console.WriteLine(item.BlogContent);
             }
+        }
+
+        public void Create(string title, string author, string content)
+        {
+            BlogDataModel blog = new BlogDataModel {
+                BlogTitle = title,
+                BlogAuthor = author,
+                BlogContent = content
+                
+            };
+            AppDbContext db = new AppDbContext();
+            db.Blogs.Add(blog);
+            var result = db.SaveChanges();
+
+            Console.WriteLine(result == 1 ? "Record Inserted" : "Record Not Inserted");
         }
     }
 }
