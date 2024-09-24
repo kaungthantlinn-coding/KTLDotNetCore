@@ -37,5 +37,25 @@ namespace KTLDotNetCore.ConsoleApp
 
             Console.WriteLine(result == 1 ? "Record Inserted" : "Record Not Inserted");
         }
+
+        public void Edit(int id)
+        {
+            AppDbContext db = new AppDbContext();
+
+            var lst = db.Blogs.Where(x => x.BlogId == id).FirstOrDefault();
+            if (lst is null)
+            {
+                Console.WriteLine("Record Not Found");
+                return;
+            }
+
+            Console.WriteLine(lst.BlogId);
+            Console.WriteLine(lst.BlogTitle);
+            Console.WriteLine(lst.BlogAuthor);
+            Console.WriteLine(lst.BlogContent);
+
+        }
+
+        
     }
 }
