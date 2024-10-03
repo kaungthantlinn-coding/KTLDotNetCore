@@ -18,10 +18,10 @@ namespace KTLDotNetCore.ConsoleApp
                 string connectionString = "Data Source=.;Initial Catalog=DotNetTesting;User ID=sa;Password=sasa@123;TrustServerCertificate=True";
                 optionsBuilder.UseSqlServer(connectionString);
             }
-        }
+           }
 
         public DbSet<BlogDataModel> Blogs { get; set; }
-
+         
          
     }
 }
