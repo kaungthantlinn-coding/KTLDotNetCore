@@ -60,4 +60,4 @@ delete from Tbl_Blog where BlogId = 1
 
 
 
-dotnet ef dbcontext scaffold "Server=.;Database=DotNetTesting;User Id=sa;Password=sasa@123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -c AppDbContext -f
+dotnet ef dbcontext scaffold "Server=.;Database=DB Name;User Id=sa;Password=sasa@123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -c AppDbContext -f
