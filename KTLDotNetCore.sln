@@ -12,9 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KTLDotNetCore.Database", "KTLDotNetCore.Database\KTLDotNetCore.Database.csproj", "{0549A499-1725-4AAE-90B6-D422BF0D993C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTLDotNetCore.ConsoleApp2", "KTLDotNetCore.ConsoleApp2\KTLDotNetCore.ConsoleApp2.csproj", "{EF9A0163-C3D9-4A46-AB17-BEB99091504E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KTLDotNetCore.ConsoleApp2", "KTLDotNetCore.ConsoleApp2\KTLDotNetCore.ConsoleApp2.csproj", "{EF9A0163-C3D9-4A46-AB17-BEB99091504E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTLDotNetCore.RestApi", "KTLDotNetCore.RestApi\KTLDotNetCore.RestApi.csproj", "{F965DB68-D9C8-40F9-9241-28F738021A86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KTLDotNetCore.RestApi", "KTLDotNetCore.RestApi\KTLDotNetCore.RestApi.csproj", "{F965DB68-D9C8-40F9-9241-28F738021A86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListApi", "ToDoListApi\ToDoListApi.csproj", "{7B23F089-1642-45AC-992F-3B9EE0A85B3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{F965DB68-D9C8-40F9-9241-28F738021A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F965DB68-D9C8-40F9-9241-28F738021A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F965DB68-D9C8-40F9-9241-28F738021A86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B23F089-1642-45AC-992F-3B9EE0A85B3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B23F089-1642-45AC-992F-3B9EE0A85B3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B23F089-1642-45AC-992F-3B9EE0A85B3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B23F089-1642-45AC-992F-3B9EE0A85B3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
