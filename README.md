@@ -28,11 +28,7 @@ SLH => Collin
 
 Bank + 5000
 
-KTLDotNetCore
-
-
-
-
+SLHDotNetCore
 
 SELECT [BlogId]
       ,[BlogTitle]
@@ -56,8 +52,45 @@ delete from Tbl_Blog where BlogId = 1
 -- Product Apple 1000, Orange 1000
 -- Staff Apple 2, Orange 1
 -- 3000, 2000, 1000
+oracle
 
+select * from tbl_blog with (nolock)
 
+commit data / uncommit data
 
+insert into commit
 
-dotnet ef dbcontext scaffold "Server=.;Database=DB Name;User Id=sa;Password=sasa@123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -c AppDbContext -f
+update tbl_blog commit
+
+1 - mg mg 1 2 - mg mg 2 3 - mg mg 3 4 - mg mg 4 5 - mg mg 5
+
+1 - mg mg 1 2 - mg mg 2 3 - mg mg 6 4 - mg mg 4 5 - mg mg 5
+
+efcore database first (manual, auto) / code first
+
+dotnet ef dbcontext scaffold "Server=.;Database=DotNetTrainingBatch5;User Id=sa;Password=sasa@123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -c AppDbContext -f
+
+API
+
+HttpMethod HttpStatusCode Request / Response
+
+5 weeks
+
+Visual Studio 2022 Installation Microsoft SQL Server 2022 SSMS (SQL Server Management System)
+
+C# Basic SQL Basic
+
+Console App (Create Project) DTO (data transfer object) Nuget Package ADO.NET Dapper
+
+ORM
+Data Model
+AsNoTracking EFCore
+AppDbContext
+Database First REST API (ASP.NET Core Web API)
+Swagger
+Postman
+Http Method
+Http Status Code
+Backend API
+
+data model (data access, database) 10 columns view model (frontend return data) 2 columns
